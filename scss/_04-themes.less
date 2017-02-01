@@ -75,23 +75,35 @@
   }
 
   &> .main_header {
-    background-color: @primary-background;
+    background: @header-background;
     font-family: @font-stack-headings;
     color: @secondary-color;
+
     text-align: center;
 
     .title {
+      color: @base-background;
       font-family: @font-stack-branding;
       font-size: @branding-size;
       letter-spacing: @branding-letter-spacing;
       text-transform: @branding-text-transform;
       line-height: @branding-line-height;
+
+      a {
+        color: @base-background;
+
+        &:hover {
+          background-color: transparent;
+          color: @base-color;
+        }
+      }
     }
-    a {
+
+    .nav a {
       color: @base-background;
 
       &:hover {
-        background-color: @secondary-color;
+        background-color: @nav-hover-color;
         color: @base-color;
       }
     }
