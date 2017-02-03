@@ -4,7 +4,24 @@
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 {{ "<![endif]-->" | safeHTML }}
 
-<link href='https://fonts.googleapis.com/css?family=Merriweather%7COpen+Sans%7CDhurjati' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ $baseurl }}css/font-awesome.min.css">
-<link rel="stylesheet" href="{{ $baseurl }}css/style.css">
-{{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ $baseurl }}css/highlight/{{ .Site.Params.highlight }}.css">{{ end }}
+<!--super minimalistic css to load before main css-->
+<link rel="stylesheet" href="{{ $baseurl }}css/mini.css">
+<noscript id="deferred-styles">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather%7COpen+Sans%7CDhurjati' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ $baseurl }}css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ $baseurl }}css/style.css">
+    {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ $baseurl }}css/highlight/{{ .Site.Params.highlight }}.css">{{ end }}
+</noscript>
+<script>
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    //if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+    //else window.addEventListener('load', loadDeferredStyles);
+</script>
