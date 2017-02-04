@@ -8,6 +8,8 @@
   <title>{{ .Title }} {{ if ne .Title .Site.Title }} &middot; {{ .Site.Title }}{{ end }}</title>
   {{ partial "base/metas" . }}
   {{ partial "head-extra" . }}
+  {{ partial "base/imports" . }}
+
   {{ with .Site.Params.googleAnalytics }}
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
