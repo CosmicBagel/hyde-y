@@ -5,11 +5,34 @@
 {{ "<![endif]-->" | safeHTML }}
 
 <!--super minimalistic css to load before main css-->
-<link rel="stylesheet" href="{{ $baseurl }}css/mini.css">
+<!--<link rel="stylesheet" href="{{ $baseurl }}css/mini.css">-->
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main_header {
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.main_header a {
+    text-decoration: none;
+}
+
+.main_header .title {
+    font-size: 2.5em;
+    line-height: 1.5em;
+}
+
+.main_wrapper {
+    padding: 4em;
+}
+</style>
 <noscript id="deferred-styles">
     <link href='https://fonts.googleapis.com/css?family=Merriweather%7COpen+Sans%7CDhurjati' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ $baseurl }}css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ $baseurl }}css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ $baseurl }}css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ $baseurl }}css/style.css">
     {{ if isset .Site.Params "highlight" }}<link rel="stylesheet" href="{{ $baseurl }}css/highlight/{{ .Site.Params.highlight }}.css">{{ end }}
 </noscript>
 <script>
