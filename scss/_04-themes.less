@@ -108,6 +108,16 @@
       }
     }
   }
+  
+  &> .main_content p::selection {
+    background: @selection-background-color;
+    color: @selection-color;
+  }
+
+  &> .main_content p::-moz-selection {
+    background: @selection-background-color;
+    color: @selection-color;
+  }
 
   &> .main_content .label:not(a) {
     padding: 2px;
