@@ -1,17 +1,17 @@
-{{ if .IsPage }}
-  {{ if or ( .NextInSection ) ( .PrevInSection ) }}
+{{ if and .IsPage .Site.Params.isPageNavOn}}
+{{ if or ( .NextInSection ) ( .PrevInSection ) }}
 
-    {{ if .PrevInSection }}
-    <a class="prev" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
-      {{ .Site.Data.Strings.previous }}
-    </a>
-    {{end}}
+{{ if .PrevInSection }}
+<a class="prev" href="{{ .PrevInSection.Permalink }}" title="{{ .PrevInSection.Title }}">
+  {{ .Site.Data.Strings.previous }}
+</a>
+{{end}}
 
-    {{ if .NextInSection }}
-    <a class="next" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
-      {{ .Site.Data.Strings.next }}
-    </a>
-    {{end}}
+{{ if .NextInSection }}
+<a class="next" href="{{ .NextInSection.Permalink }}" title="{{ .NextInSection.Title }}">
+  {{ .Site.Data.Strings.next }}
+</a>
+{{end}}
 
-  {{ end }}
+{{ end }}
 {{ end }}
