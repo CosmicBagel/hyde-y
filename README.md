@@ -1,3 +1,13 @@
+CosmicBagel's blog theme
+======
+
+I've been modifying this theme for a while now, below are the original readme notes.
+
+- I'm not sure if the theme originally had minifying stuff, but I added that using nodejs automation (tho it's very slow)
+- Changed colors, fonts, and a few things to make it more in line with the look I wanted / sort of branding
+- Added a newsletter bit to the header nav
+- Currently I'm using it with Hugo 0.53, there were a few minor changes to update the theme to support this newer version
+
 Hyde-Y
 ======
 
